@@ -169,7 +169,7 @@ public class JavaScriptFrameworkTests {
 
 	}
 	@Test
-	public void findByNameHype() throws Exception {
+	public void findByHypeTest() throws Exception {
 		prepareData();
 		mockMvc.perform(get("/frameworks/findByHype?hype="+3)).andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
 				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
