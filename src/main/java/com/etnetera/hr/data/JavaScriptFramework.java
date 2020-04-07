@@ -1,10 +1,6 @@
 package com.etnetera.hr.data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Simple data entity describing basic properties of every JavaScript framework.
@@ -21,12 +17,21 @@ public class JavaScriptFramework {
 
 	@Column(nullable = false, length = 30)
 	private String name;
+	@Column(nullable = true, length = 30)
+	private String version;
+	@Column(nullable = true)
+	private Long deprecationDate;
+	@Column(nullable = true)
+	private Double hype;
 
 	public JavaScriptFramework() {
 	}
 
-	public JavaScriptFramework(String name) {
+	public JavaScriptFramework(String name, String version, Long deprecationDate, Double hype) {
 		this.name = name;
+		this.version = version;
+		this.deprecationDate = deprecationDate;
+		this.hype = hype;
 	}
 
 	public Long getId() {
@@ -43,6 +48,30 @@ public class JavaScriptFramework {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public java.lang.String getVersion() {
+		return version;
+	}
+
+	public void setVersion(java.lang.String version) {
+		this.version = version;
+	}
+
+	public Long getDeprecationDate() {
+		return deprecationDate;
+	}
+
+	public void setDeprecationDate(Long deprecationDate) {
+		this.deprecationDate = deprecationDate;
+	}
+
+	public Double getHype() {
+		return hype;
+	}
+
+	public void setHype(Double hype) {
+		this.hype = hype;
 	}
 
 	@Override
